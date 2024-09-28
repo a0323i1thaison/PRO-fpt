@@ -4,43 +4,32 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author thais
  */
-public class NhanVien {
+public abstract class NhanVien {
     protected String id;
-    protected String hoTen;
+    protected String ho;
+    protected String ten;
     protected int tuoi;
-    protected String ngaySinh;
-    protected int soNgayLamViec;
+    protected Date ngaySinh;
 
-    public NhanVien(String id, String hoTen, int tuoi, String ngaySinh, int soNgayLamViec) {
+    public NhanVien(String id, String ho, String ten, int tuoi, Date ngaySinh) {
         this.id = id;
-        this.hoTen = hoTen;
+        this.ho = ho;
+        this.ten = ten;
         this.tuoi = tuoi;
         this.ngaySinh = ngaySinh;
-        this.soNgayLamViec = soNgayLamViec;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getHoTen() {
-        return hoTen;
-    }
-
-    public int getSoNgayLamViec() {
-        return soNgayLamViec;
-    }
-
-    public double tinhLuong() {
-        return 0;
-    }
+    public abstract double tinhLuong();
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Họ Tên: " + hoTen + ", Tuổi: " + tuoi + ", Ngày Sinh: " + ngaySinh + ", Số Ngày Làm Việc: " + soNgayLamViec;
+        return "ID: " + id + ", Ho: " + ho + ", Ten: " + ten + ", Tuoi: " + tuoi + ", Ngay Sinh: " + ngaySinh;
     }
 }
+

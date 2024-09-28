@@ -4,16 +4,19 @@
  */
 package View;
 
-import Controller.QuangLyNhanVien;
+import Controller.ControllerNhanVien;
+import Model.CongTy;
 
 /**
  *
  * @author thais
  */
-public class Test2 {
+public class Main {
     public static void main(String[] args) {
-        QuangLyNhanVien quanLy = new QuangLyNhanVien();
-        quanLy.menu();
+        CongTy congTy = new CongTy("Company FPT");
+        ViewNhanVien view = new ViewNhanVien();
+        ControllerNhanVien controller = new ControllerNhanVien(congTy, view);
+        
+        controller.chay();
     }
-    
 }
