@@ -48,16 +48,4 @@ public class Company {
     public void addCustomer(Customer customer) {
         customers.add(customer);
     }
-
-    public List<Customer> getCustomersByBirthYear(int year) {
-        List<Customer> result = new ArrayList<>();
-        for (Customer customer : customers) {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(customer.getDob());
-            if (cal.get(Calendar.YEAR) == year) {
-                result.add(customer);
-            }
-        }
-        return result;
-    }  
 }
