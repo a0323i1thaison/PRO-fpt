@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author thais
  */
-public class ViewNhanVien {
+ public class ViewNhanVien {
     private Scanner scanner;
 
     public ViewNhanVien() {
@@ -21,26 +21,26 @@ public class ViewNhanVien {
 
     public int hienThiMenu() {
         System.out.println("Menu:");
-        System.out.println("1. Nhập danh sách nhân viên");
-        System.out.println("2. Xuất danh sách nhân viên");
-        System.out.println("3. Sắp xếp giảm dần theo lương");
-        System.out.println("4. Tìm và xóa nhân viên theo tên");
-        System.out.println("5. Xuất mức lương trung bình của từng loại nhân viên");
-        System.out.println("6. Thoát");
-        System.out.print("Chọn tùy chọn: ");
+        System.out.println("1. Nhap danh sanh nhan vien ");
+        System.out.println("2. Xuat danh sach nhan vien ");
+        System.out.println("3. Sap xep giam dan theo luong ");
+        System.out.println("4. Tim va xoa nhan vien theo ten ");
+        System.out.println("5. Xuat muc luong trung binh cua tung loai nhan vien ");
+        System.out.println("6. Thoat");
+        System.out.print("Chon tuy chon : ");
         return scanner.nextInt();
     }
 
     public void hienThiNhanViens(ArrayList<NhanVien> nhanViens) {
-        System.out.println("Danh sách nhân viên:");
+        System.out.println("Danh sach nhan vien :");
         for (NhanVien nv : nhanViens) {
             System.out.println(nv);
         }
     }
 
     public void hienThiLuongTrungBinh(double luongThoiVu, double luongChinhThuc) {
-        System.out.println("Mức lương trung bình nhân viên thời vụ: " + luongThoiVu);
-        System.out.println("Mức lương trung bình nhân viên chính thức: " + luongChinhThuc);
+        System.out.println("Muc luong trung binh nhan vien thoi vu: " + luongThoiVu);
+        System.out.println("Muc luong trung binh nhan vien chinh thuc : " + luongChinhThuc);
     }
 
     public void hienThiThongDiep(String thongDiep) {
@@ -48,13 +48,13 @@ public class ViewNhanVien {
     }
 
     public String layTenNhanVien() {
-        System.out.print("Nhập tên nhân viên: ");
+        System.out.print("Nhap ten nhan vien : ");
         scanner.nextLine(); 
         return scanner.nextLine();
     }
 
     public int layLoaiNhanVien() {
-        System.out.print("Nhập loại nhân viên (1: Thời vụ, 2: Chính thức): ");
+        System.out.print("Nhap loại nhan vien  (1: Thoi vu , 2: Chinh thuc ): ");
         return scanner.nextInt();
     }
 

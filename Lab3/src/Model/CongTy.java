@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author thais
  */
 public class CongTy {
-     private String ten;
+    private String ten;
     private ArrayList<NhanVien> nhanViens;
 
     public CongTy(String ten) {
