@@ -21,11 +21,7 @@ public class ControllerNhanVien {
     private ViewNhanVien view;
     private SimpleDateFormat formatter;
 
-    /**
-     *
-     * @param congTy
-     * @param view
-     */
+
     public ControllerNhanVien(CongTy congTy, ViewNhanVien view) {
         this.congTy = congTy;
         this.view = view;

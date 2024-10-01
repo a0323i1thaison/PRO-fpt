@@ -5,6 +5,7 @@
 package View;
 
 import Controller.CompanyManegement;
+import Model.Company;
 
 
 /**
@@ -13,7 +14,8 @@ import Controller.CompanyManegement;
  */
 public class Menu {
     public static void main(String[] args) {
-       CompanyManegement manegement = new CompanyManegement();
+       Company company = new Company();
+       CompanyManegement manegement = new CompanyManegement(company ) ;
        manegement.showMenu();    
     } 
 }

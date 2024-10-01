@@ -16,9 +16,7 @@ import java.util.Scanner;
 public class CompanyManegement {
      Company company;
      Scanner scanner;
-   
-    
-    public CompanyManegement(){
+    public CompanyManegement(Company company){
         company = new Company();
         Scanner  scanner= new Scanner(System.in);
     }
