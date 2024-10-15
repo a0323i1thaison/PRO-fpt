@@ -12,13 +12,13 @@ import java.util.Date;
  *
  * @author thais
  */
-public class Customer {
+public class Customer implements Comparable<Customer>{
     protected int customerID ;
     protected String name ;
     protected String phone ;
     protected Date dob ;
     protected String address ;
-     public Customer(int customerID, String name, String phone, String dob, String address) throws ParseException {
+     public Customer(String name, String phone, String dob, String address, String address1) throws ParseException {
         this.customerID = customerID;
         this.name = name;
         this.phone = phone;
@@ -76,5 +76,16 @@ public class Customer {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Customer o) {
+       
+        return this.name.compareToIgnoreCase(o.name) ;
+       
+    }
+
+    public Object getId() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
