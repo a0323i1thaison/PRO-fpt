@@ -9,5 +9,9 @@ package lab5.view;
  * @author thais
  */
 public class test {
-    
+    public static void main(String[] args) {
+        
+        }
+  
 }
+
