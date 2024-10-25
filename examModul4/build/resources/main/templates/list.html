@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Đơn Hàng</title>
+  <!-- Bootstrap CSS for styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Danh Sách Đơn Hàng</h1>
+  <table class="table table-bordered table-hover table-responsive-md">
+    <thead class="thead-dark">
+    <tr>
+      <th>Số Thứ Tự</th>
+      <th>Mã Đơn Hàng</th>
+      <th>Tên Sản Phẩm</th>
+      <th>Giá (USD)</th>
+      <th>Loại Sản Phẩm</th>
+      <th>Ngày Mua</th>
+      <th>Số Lượng</th>
+      <th>Tổng Tiền</th>
+      <th>Hành Động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order, iterStat : ${orders}">
+      <td th:text="${iterStat.index + 1}"></td>
+      <td th:text="${order.ma_don_hang}"></td>
+      <td th:text="${order.ten_sp}"></td>
+      <td th:text="${order.gia_sp}"></td>
+      <td th:text="${order.tenLoaiSp}"></td>
+      <td th:text="${order.ngay_mua}"></td>
+      <td th:text="${order.so_luong}"></td>
+      <td th:text="${order.gia_sp * order.so_luong}"></td>
+      <td><a th:href="@{/update/{id}(id=${order.ma_don_hang})}">Sửa</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
