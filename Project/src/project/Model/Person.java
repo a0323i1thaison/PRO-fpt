@@ -9,33 +9,25 @@ package project.Model;
  * @author thais
  */
 public abstract class Person {
-    private int id ;
-    private String name ;
-    private String sex ;
+      private String name;
+    private String sex;
     private String email;
-    private String dob ;
-    private String phoneNumber  ;
+    private String id;
+    private String dateOfBirth;
+    private String phoneNumber;
     private String CMND;
 
     public Person() {
     }
 
-    public Person(int id, String name, String sex, String email, String dob, String phoneNumber, String CMND) {
-        this.id = id;
+    public Person(String name, String sex, String email, String id, String dateOfBirth, String phoneNumber, String CMND) {
         this.name = name;
         this.sex = sex;
         this.email = email;
-        this.dob = dob;
+        this.id = id;
+        this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.CMND = CMND;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -62,12 +54,20 @@ public abstract class Person {
         this.email = email;
     }
 
-    public String getDob() {
-        return dob;
+    public String getId() {
+        return id;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getPhoneNumber() {
@@ -88,8 +88,15 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", name=" + name + ", sex=" + sex + ", email=" + email + ", dob=" + dob + ", phoneNumber=" + phoneNumber + ", CMND=" + CMND + '}';
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                ", id='" + id + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", CMND='" + CMND + '\'' +
+                '}';
     }
-    
     
 }

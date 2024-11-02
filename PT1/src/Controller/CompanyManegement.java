@@ -7,7 +7,7 @@ package Controller;
 
 import Model.Company;
 import Model.Customer;
-import Model.Menu;
+import View.Menu;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

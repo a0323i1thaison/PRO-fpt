@@ -4,10 +4,12 @@
  */
 package project.Reponsitory;
 
+import project.Reponsitory.impl.IBookingRespo;
+
 /**
  *
  * @author thais
  */
-public class CustumerResponsitory {
+public class BookingReponsitory implements IBookingRespo{
     
 }

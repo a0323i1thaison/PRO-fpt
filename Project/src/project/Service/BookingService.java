@@ -4,10 +4,12 @@
  */
 package project.Service;
 
+import project.Service.impl.IBookingService;
+
 /**
  *
  * @author thais
  */
-public class BookingService {
+public class BookingService implements IBookingService{
     
 }

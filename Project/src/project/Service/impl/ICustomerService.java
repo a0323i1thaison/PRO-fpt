@@ -8,6 +8,6 @@ package project.Service.impl;
  *
  * @author thais
  */
-public interface IEmployeeService extends IService{
+public interface ICustomerService extends IService{
     
 }

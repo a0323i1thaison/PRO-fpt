@@ -9,45 +9,56 @@ package project.Model;
  * @author thais
  */
 public class Employee extends Person{
-    private String chucVu ;
-    private double luong;
-
-    public Employee(String chucVu, double luong) {
-        this.chucVu = chucVu;
-        this.luong = luong;
-    }
-
-    public Employee(String chucVu, double luong, int id, String name, String sex, String email, String dob, String phoneNumber, String CMND) {
-        super(id, name, sex, email, dob, phoneNumber, CMND);
-        this.chucVu = chucVu;
-        this.luong = luong;
-    }
+    private String level;
+    private String position;
+    private double salary;
 
     public Employee() {
     }
 
-    public String getChucVu() {
-        return chucVu;
+    public Employee(String level, String position, double salary) {
+        this.level = level;
+        this.position = position;
+        this.salary = salary;
     }
 
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
+    public Employee(String name, String sex, String email, String id, String dateOfBirth, String phoneNumber, String CMND, String level, String position, double salary) {
+        super(name, sex, email, id, dateOfBirth, phoneNumber, CMND);
+        this.level = level;
+        this.position = position;
+        this.salary = salary;
     }
 
-    public double getLuong() {
-        return luong;
+    public String getLevel() {
+        return level;
     }
 
-    public void setLuong(double luong) {
-        this.luong = luong;
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return "Employee{" + "chucVu=" + chucVu + ", luong=" + luong + '}';
+        return super.toString() + ";" + this.level + "; vi tri: " +this.position + ";" +this.salary;
     }
-    public String getInfoToFile(){
-        return this.getName()+ "," + this.getSex() + "," + this.getEmail() + "," + this.getId() + "," + this.getDob()+ "," + this.getPhoneNumber()+ " , " + this.getCMND() + " , " + this.chucVu + " , " + this.luong ;
+
+    public String getInfoToCSV() {
+        return this.getName() + "," + this.getSex() + "," + this.getEmail() + "," + this.getId() + "," + this.getDateOfBirth() + "," + this.getPhoneNumber() + " , " + this.getCMND() + " , " + this.level + " , " + this.position + " , " + this.salary ;
     }
-    
 }
