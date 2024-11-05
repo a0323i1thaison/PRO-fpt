@@ -5,14 +5,11 @@
 package project.Controller;
 
 import java.util.Scanner;
-import project.Service.BookingService;
-import project.Service.ContractService;
 import project.Service.CustomerService;
 import project.Service.EmployeeService;
 import static project.Service.EmployeeService.ID_EMPLOYEE_VALID;
 import project.Service.FacilityService;
-import project.Service.impl.IBookingService;
-import project.Service.impl.IContractService;
+
 import project.Service.impl.ICustomerService;
 import project.Service.impl.IEmployeeService;
 import project.Service.impl.IFacilityService;
@@ -24,8 +21,6 @@ import project.Util.CheckInputData;
  */
 public class ResortController {
     private static ResortController resortController = new ResortController();
-    private static IBookingService bookingService = new BookingService();
-    private static IContractService contractService = new ContractService();
     private static ICustomerService customerService = new CustomerService();
     private static IEmployeeService employeeService = new EmployeeService();
     private static IFacilityService facilityService = new FacilityService();
@@ -33,12 +28,10 @@ public class ResortController {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
         do {
-            System.out.println("1.Employee Management");
-            System.out.println("2.Customer Management");
-            System.out.println("3.Facility Management");
-            System.out.println("4.Booking Management");
-            System.out.println("5.Promotion Management.");
-            System.out.println("6.Exit");
+            System.out.println(" | 1.Employee Management   |");
+            System.out.println(" | 2.Customer Management   |");
+            System.out.println(" | 3.Facility Management   |");
+            System.out.println(" |       4.Exit            |");
             int choice = CheckInputData.CheckInputOption("choose:", 1, 6);
             switch (choice) {
                 case 1: {
@@ -53,14 +46,6 @@ public class ResortController {
                      menuFacility();
                      break;
                 }
-                case 4: {
-                     menuBooking();
-                     break;
-                }
-                case 5: {
-                     menuPromtion();
-                     break;
-                }
                 default: {
                     flag = false;
                 }
@@ -72,11 +57,11 @@ public class ResortController {
     public static void menuEmployee() {
         boolean flag = true;
         do {
-            System.out.println("1.Display list employees.");
-            System.out.println("2.Add new employee.");
-            System.out.println("3.Edit employee.");
-            System.out.println("4.Remove employee.");
-            System.out.println("5.Return main menu.");
+            System.out.println("|1.Display list employees.|");
+            System.out.println("|2.Add new employee.      |");
+            System.out.println("|3.Edit employee.         |");
+            System.out.println("|4.Remove employee.       |");
+            System.out.println("|5.Return main menu.      |");
             int choiceEmployee = CheckInputData.CheckInputOption("choose Employee:", 1, 5);
             switch (choiceEmployee) {
                 case 1: {
@@ -136,8 +121,7 @@ public class ResortController {
         do {
             System.out.println("1.Display list facility.");
             System.out.println("2.Add new facility.");
-            System.out.println("3.Display list facility maintenance.");
-            System.out.println("4.Return main menu.");
+            System.out.println("3.Return main menu.");
             int choiceFacility = CheckInputData.CheckInputOption("choose Customer:", 1, 4);
             switch (choiceFacility) {
                 case 1: {
@@ -147,11 +131,8 @@ public class ResortController {
                 case 2: {
                     facilityService.add();
                     break;
-
                 }
-                case 3: {
 
-                }
                 default: {
                     flag = false;
                 }

@@ -30,7 +30,7 @@ public class ReadAndWriterFile {
             bufferedWriter.close();
             fileWriter.close();
         } catch (Exception e) {
-            System.out.println("Lỗi ghi File.");
+            System.out.println("File write error.");
         }
 
     }
@@ -50,7 +50,7 @@ public class ReadAndWriterFile {
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e) {
-            System.out.println("Lỗi đọc file");
+            System.out.println("File read error");
         }
         return stringList;
     }

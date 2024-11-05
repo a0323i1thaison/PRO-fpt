@@ -26,7 +26,7 @@ public class Validation {
       } else if (option.equalsIgnoreCase("N")) {
         return false;
       } else {
-        System.out.println("Bạn phải nhập Y hoặc N");
+        System.out.println("You must enter Y or N");
       }
     }
   }

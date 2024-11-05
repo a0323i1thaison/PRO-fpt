@@ -29,21 +29,21 @@ public class CustomerService implements ICustomerService{
     public void add() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-                String name = CheckInputData.checkInput("Mời bạn nhập tên của Customer:",NAME_CUSTOMER_VALID, "Tên không hợp lệ.Vui lòng nhập lại." );
-                String sex = CheckInputData.checkInputSex("Mời bạn nhập sex của Customer:");
-                String email = CheckInputData.checkInput("Mời bạn nhập email của Customer:", EMAIL_CUSTOMER_VALID, "Email không hợp lệ.Vui lòng nhập lại.");
-                String id = CheckInputData.checkInput("Mời bạn nhập id của Customer:", ID_CUSTOMER_VALID, "Id không hợp lệ.Vui lòng nhập lại.");
-                System.out.println("Nhập ngày sinh:");
+                String name = CheckInputData.checkInput("Please enter the Customer's name:",NAME_CUSTOMER_VALID, "Invalid name.Please re-enter." );
+                String sex = CheckInputData.checkInputSex("Please enter Customer's sex:");
+                String email = CheckInputData.checkInput("Please enter Customer email:", EMAIL_CUSTOMER_VALID, "Invalid email.Please re-enter.");
+                String id = CheckInputData.checkInput("Please enter Customer id:", ID_CUSTOMER_VALID, "Invalid id.Please re-enter.");
+                System.out.println("Enter date of birth:");
                 String dateOfBirth = scanner.nextLine();
-                String phoneNumber = CheckInputData.checkInput("Mời bạn nhập số điện thoại của Customer:", PHONENUMBER_CUSTOMER_VALID, "Số điện thoại không hợp lệ.Vui lòng nhập lại.");
-                String CMND = CheckInputData.checkInput("Mời bạn nhập số CMND của Customer:", CMND_CUSTOMER_VALID, "CMND không hợp lệ.Vui lòng nhập lại.");
-                String address = CheckInputData.checkInputNull("Mời bạn nhập địa chỉ của Customer:", "address");
-                String typeCustomer = CheckInputData.checkInputNull("Mời bạn nhập loại của Customer:", "type");
+                String phoneNumber = CheckInputData.checkInput("Please enter Customer's phone number:", PHONENUMBER_CUSTOMER_VALID, "Invalid phone number.Please re-enter.");
+                String CMND = CheckInputData.checkInput("Please enter Customer's ID number:", CMND_CUSTOMER_VALID, "Invalid ID. Please re-enter.");
+                String address = CheckInputData.checkInputNull("Please enter Customer's address:", "address");
+                String typeCustomer = CheckInputData.checkInputNull("Please enter the type of Customer:", "type");
                 Customer customer = new Customer(name, sex, email, id, dateOfBirth, phoneNumber, CMND, address, typeCustomer);
                 customerRepository.add(customer);
-                System.out.println("Đã thêm thành công.");
+                System.out.println("Added successfully.");
 
-                String mess = "Bạn có mốn nhập nữa không?(Y/N)";
+                String mess = "Do you want to enter more?(Y/N)";
                 if (Validation.confirm(mess)) {
                 continue;
                 } else {

@@ -18,12 +18,12 @@ public class CheckInputData {
                 System.out.println(message);
                 int option = Integer.parseInt(scanner.nextLine());
                 if (option < min || option > max) {
-                    System.out.printf("Option phải từ %d đến %d", min, max);
+                    System.out.printf("Option must be from %d to %d", min, max);
                     continue;
                 }
                 return option;
             } catch (Exception e) {
-                System.out.println("Option phải là số.");
+                System.out.println("Option must be numeric.");
             }
         }
     }
@@ -48,7 +48,7 @@ public class CheckInputData {
             if(sex.equalsIgnoreCase("Nam") || sex.equalsIgnoreCase("Nu")) {
                 return sex;
             } else {
-                System.out.println("Sex phải là nam hoặc nu.");
+                System.out.println("Sex must be nam or nu.");
             }
         }
     }
@@ -57,10 +57,10 @@ public class CheckInputData {
         while (true) {
             System.out.println(message);
             String level = scanner.nextLine();
-            if(level.equalsIgnoreCase("Trung cap") || level.equalsIgnoreCase("Cao dang") || level.equalsIgnoreCase("Dai học") || level.equalsIgnoreCase("Sau dai học")) {
+            if(level.equalsIgnoreCase("Trung cap") || level.equalsIgnoreCase("Cao dang") || level.equalsIgnoreCase("Dai hoc") || level.equalsIgnoreCase("Sau dai hoc")) {
                 return level;
             } else {
-                System.out.println("Trình độ phải là Trung cap,Cao dang,Dai hoc hoặc Sau dai học.Vui lòng nhập laị");
+                System.out.println("The level must be Trung cap,Cao dang,Dai hoc, Sau dai hoc.Please re-enter");
             }
         }
     }
@@ -72,7 +72,7 @@ public class CheckInputData {
             if(position.equalsIgnoreCase("Le tan") || position.equalsIgnoreCase("Phuc vu") || position.equalsIgnoreCase("Chuyen vien") || position.equalsIgnoreCase("Giam sat") || position.equalsIgnoreCase("Quan li") || position.equalsIgnoreCase("Giam doc")) {
                 return position;
             } else {
-                System.out.println("Vị trí phải là Le tan, Phuc vu, Chuyen Vien, Giam Sat, Quan Li, Giam Doc. Vui lòng nhập lại.");
+                System.out.println("The location must be Le tan, Phuc vu, Chuyen Vien, Giam Sat, Quan Ly, Giam Doc . Please re-enter.");
             }
         }
     }
@@ -81,7 +81,7 @@ public class CheckInputData {
             System.out.println(message);
             String result = scanner.nextLine();
             if(result.length() == 0 || result == null) {
-                System.out.println(warn + "không hợp lệ.Vui lòng nhập lại.");
+                System.out.println(warn + "Invalid.Please re-enter.");
             }
         }
     }
@@ -95,13 +95,13 @@ public class CheckInputData {
                 System.out.println(message);
                 double money = Double.parseDouble(scanner.nextLine());
                 if (money < min ) {
-                    System.out.printf("Tiền phải là số tiền lớn hơn %d", min);
+                    System.out.printf("Money must be an amount greater than %d", min);
                     continue;
                 }
                 return money;
             } catch (Exception e) {
 //                System.out.println(e.getMessage());
-                System.out.println("Tiền phải là số.");
+                System.out.println("Money must be numbers.");
             }
         }
     }
@@ -112,12 +112,12 @@ public class CheckInputData {
                 System.out.println(message);
                 float area = Float.parseFloat(scanner.nextLine());
                 if (area < min) {
-                    System.out.printf("Diện tích phải lớn hơn %d m2", min );
+                    System.out.printf("Area must be greater than %d m2", min );
                     continue;
                 }
                 return area;
             } catch (Exception e) {
-                System.out.println("Diện tích phải là số.");
+                System.out.println("Area must be a number.");
             }
         }
     }
@@ -128,12 +128,12 @@ public class CheckInputData {
                 System.out.println(message);
                 int people = Integer.parseInt(scanner.nextLine());
                 if(people <= min || people >= max ) {
-                    System.out.printf("Số lượng người phải nằm trong khoảng từ %d đến %d người.", min, max);
+                    System.out.printf("Number of people must be between %d and %d people.", min, max);
                     continue;
                 }
                 return people;
             } catch (Exception e) {
-                System.out.println("Số người phải là số.");
+                System.out.println("Number of people must be number.");
             }
 
         }
@@ -144,12 +144,12 @@ public class CheckInputData {
                 System.out.println(message);
                 int floor = Integer.parseInt(scanner.nextLine());
                 if(floor <= min) {
-                    System.out.printf("Số tầng phải lớn hơn %d", min);
+                    System.out.printf("Number of floors must be greater than %d", min);
                     continue;
                 }
                 return floor;
             } catch (Exception e) {
-                System.out.println("Số tầng phải là số.");
+                System.out.println("Floor number must be numeric.");
             }
         }
     }

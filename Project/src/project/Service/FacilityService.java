@@ -31,12 +31,12 @@ public class FacilityService implements IFacilityService{
     public void add() {
         boolean flag = true;
         do {
-            System.out.println("Chọn chức năng thêm loại trong Facilty:");
+            System.out.println("Select the add type function in Facility:");
             System.out.println("1.Add new Villa.");
             System.out.println("2.Add new House.");
             System.out.println("3.Add new Room.");
             System.out.println("4.Back to menu.");
-            int choice = CheckInputData.CheckInputOption("Mời bạn nhập chức năng thêm:", 1, 4);
+            int choice = CheckInputData.CheckInputOption("Please enter additional functions:", 1, 4);
             switch (choice) {
                 case 1: {
                     addVilla();
@@ -80,20 +80,20 @@ public class FacilityService implements IFacilityService{
 
     public static void addVilla() {
         while (true) {
-          String idService = CheckInputData.checkInput("Mời bạn nhập mã dịch vụ của Villa:", ID_VILLA_VALID, "Mã dịch vụ không hợp lệ.Vui lòng nhập lại.");
-          String nameService = CheckInputData.checkInput("Mời bạn nhập tên dịch vu:", NAME_VALID, "Tên dịch vụ không hợp lệ.Vui lòng nhập lại.");
-          float usingArea = CheckInputData.checkInputArea("Mời bạn nhập diện tích sử dụng:", 30.0f);
-          double price = CheckInputData.checkInputMoney("Mời bạn nhập chi phí thuê:", 0);
-          int maxPeople = CheckInputData.checkInputPeople("Mời bạn nhập số người:", 0, 20);
-          String rentalType = CheckInputData.checkInput("Mời bạn nhập kiểu thuê:", NAME_VALID, "Kiểu thuê không hợp lệ.Vui lòng nhập lại." );
-          String roomStandard = CheckInputData.checkInput("Mời bạn nhập tiêu chuẩn phòng:", NAME_VALID,"Tiêu chuẩn phòng không hợp lệ.Vui lòng nhập lại." );
-          float poolArea = CheckInputData.checkInputArea("Mời bạn nhập diện tích hồ bơi:", 30.0f);
-          int quantityFloor = CheckInputData.checkInputFloor("Mời bạn nhập số tầng:", 0);
+          String idService = CheckInputData.checkInput("Please enter Villa service code:", ID_VILLA_VALID, "Invalid service code.Please re-enter.");
+          String nameService = CheckInputData.checkInput("Please enter the service name:", NAME_VALID, "Invalid service name.Please re-enter.");
+          float usingArea = CheckInputData.checkInputArea("Please enter the usable area:", 30.0f);
+          double price = CheckInputData.checkInputMoney("Please enter rental cost:", 0);
+          int maxPeople = CheckInputData.checkInputPeople("Please enter number of people:", 0, 20);
+          String rentalType = CheckInputData.checkInput("Please enter rental type:", NAME_VALID, "Invalid rental type.Please re-enter." );
+          String roomStandard = CheckInputData.checkInput("Please enter room standard:", NAME_VALID,"Room standard is invalid.Please re-enter." );
+          float poolArea = CheckInputData.checkInputArea("Please enter pool area:", 30.0f);
+          int quantityFloor = CheckInputData.checkInputFloor("Please enter floor number:", 0);
           Villa villa = new Villa(idService, nameService, usingArea, price, maxPeople, rentalType, roomStandard, poolArea, quantityFloor);
           facilityRepository.add(villa);
-            System.out.println("Đã thêm thành công.");
+            System.out.println("Added successfully.");
 
-            String mess = "Bạn có mốn nhập nữa không?(Y/N)";
+            String mess = "Do you want to enter more?(Y/N)";
             if (Validation.confirm(mess)) {
                 continue;
             } else {
@@ -105,18 +105,18 @@ public class FacilityService implements IFacilityService{
 
     public static void addHouse() {
         while (true) {
-            String idService = CheckInputData.checkInput("Mời bạn nhập mã dịch vụ của House:", ID_HOUSE_VALID, "Mã dịch vụ không hợp lệ.Vui lòng nhập lại.");
-            String nameService = CheckInputData.checkInput("Mời bạn nhập tên dịch vu:", NAME_VALID, "Tên dịch vụ không hợp lệ.Vui lòng nhập lại.");
-            float usingArea = CheckInputData.checkInputArea("Mời bạn nhập diện tích sử dụng:", 30.0f);
-            double price = CheckInputData.checkInputMoney("Mời bạn nhập chi phí thuê:", 0);
-            int maxPeople = CheckInputData.checkInputPeople("Mời bạn nhập số người:", 0, 20);
-            String rentalType = CheckInputData.checkInput("Mời bạn nhập kiểu thuê:", NAME_VALID, "Kiểu thuê không hợp lệ.Vui lòng nhập lại.");
-            String roomStandard = CheckInputData.checkInput("Mời bạn nhập tiêu chuẩn phòng:", NAME_VALID, "Tiêu chuẩn phòng không hợp lệ.Vui lòng nhập lại.");
-            int quantityFloor = CheckInputData.checkInputFloor("Mời bạn nhập số tầng:", 0);
+            String idService = CheckInputData.checkInput("Please enter House service code:", ID_HOUSE_VALID, "Invalid service code.Please re-enter.");
+            String nameService = CheckInputData.checkInput("Please enter the service name:", NAME_VALID, "Invalid service name.Please re-enter.");
+            float usingArea = CheckInputData.checkInputArea("Please enter the usable area:", 30.0f);
+            double price = CheckInputData.checkInputMoney("Please enter rental cost:", 0);
+            int maxPeople = CheckInputData.checkInputPeople("Please enter number of people:", 0, 20);
+            String rentalType = CheckInputData.checkInput("Please enter rental type:", NAME_VALID, "Invalid rental type.Please re-enter.");
+            String roomStandard = CheckInputData.checkInput("Please enter room standard:Please enter room standard:", NAME_VALID, "Room standard is invalid.Please re-enter.");
+            int quantityFloor = CheckInputData.checkInputFloor("Please enter floor number:", 0);
             House house = new House(idService, nameService, usingArea, price, maxPeople, rentalType, roomStandard, quantityFloor);
             facilityRepository.add(house);
-            System.out.println("Đã thêm thành công.");
-            String mess = "Bạn có mốn nhập nữa không?(Y/N)";
+            System.out.println("Added successfully.");
+            String mess = "Do you want to enter more?(Y/N)";
             if (Validation.confirm(mess)) {
                 continue;
             } else {
@@ -127,17 +127,17 @@ public class FacilityService implements IFacilityService{
 
     public static void addRoom() {
         while (true) {
-            String idService = CheckInputData.checkInput("Mời bạn nhập mã dịch vụ của Room:", ID_ROOM_VALID, "Mã dịch vụ không hợp lệ.Vui lòng nhập lại.");
-            String nameService = CheckInputData.checkInput("Mời bạn nhập tên dịch vu:", NAME_VALID, "Tên dịch vụ không hợp lệ.Vui lòng nhập lại.");
-            float usingArea = CheckInputData.checkInputArea("Mời bạn nhập diện tích sử dụng:", 30.0f);
-            double price = CheckInputData.checkInputMoney("Mời bạn nhập chi phí thuê:", 0);
-            int maxPeople = CheckInputData.checkInputPeople("Mời bạn nhập số người:", 0, 20);
-            String rentalType = CheckInputData.checkInput("Mời bạn nhập kiểu thuê:", NAME_VALID, "Kiểu thuê không hợp lệ.Vui lòng nhập lại.");
-            String freeService = CheckInputData.checkInputNull("Mời bạn nhập phí dịch vụ:", "freeService");
+            String idService = CheckInputData.checkInput("Please enter Room service code:", ID_ROOM_VALID, "Invalid service code.Please re-enter.");
+            String nameService = CheckInputData.checkInput("Please enter the service name:", NAME_VALID, "Invalid service name.Please re-enter.");
+            float usingArea = CheckInputData.checkInputArea("Please enter the usable area:", 30.0f);
+            double price = CheckInputData.checkInputMoney("Please enter rental cost:", 0);
+            int maxPeople = CheckInputData.checkInputPeople("Please enter number of people:", 0, 20);
+            String rentalType = CheckInputData.checkInput("Please enter rental type:", NAME_VALID, "Invalid rental type.Please re-enter.");
+            String freeService = CheckInputData.checkInputNull("Please enter service fee:", "freeService");
             Room room = new Room(idService, nameService, usingArea, price, maxPeople, rentalType, freeService );
             facilityRepository.add(room);
-            System.out.println("Đã thêm thành công.");
-            String mess = "Bạn có mốn nhập nữa không?(Y/N)";
+            System.out.println("Added successfully.");
+            String mess = "Do you want to enter more?(Y/N)";
             if (Validation.confirm(mess)) {
                 continue;
             } else {
