@@ -1,4 +1,4 @@
-package com.mycompany.lab211s.week1;
+package lab211son.Week1;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

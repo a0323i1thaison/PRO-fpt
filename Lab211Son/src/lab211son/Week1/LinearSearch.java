@@ -1,4 +1,4 @@
-package com.mycompany.lab211s.week1;
+package lab211son.Week1;
 
 
 public class LinearSearch {
