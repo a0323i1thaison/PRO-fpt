@@ -1,22 +1,37 @@
 package lab211son.Week1;
 
+import java.util.Random;
 
 public class LinearSearch {
-
-    private int[] arr;
-
-    public LinearSearch(int n) {
-        this.arr = new int[n];
+    private int[] array;
+    
+    public LinearSearch(int size) {
+        array = new int[size];
+        generateRandomArray();
     }
-
-    public void addValue() {
+    
+    private void generateRandomArray() {
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
+        }
     }
-
-    public void seachNumber() {
+    
+    public void displayArray() {
+        System.out.print("Generated array: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
     }
-//    void dissplayIndex( int a){
-//        
-//        return 1 ;
-//    }
+    
+    public int linearSearch(int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i; 
+            }
+        }
+        return -1;
+    }
 
 }
