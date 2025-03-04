@@ -8,10 +8,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- *
- * @author thais
- */
+
 public class Test {
      public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -37,7 +34,7 @@ public class Test {
         Random random = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = random.nextInt(100); // Số ngẫu nhiên từ 0 - 99
+            arr[i] = random.nextInt(100); 
         }
         return arr;
     }

@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author thais
  */
 public class Matrix {
-     private int rows, cols;
+    private int rows, cols;
     private int[][] data;
 
     public Matrix(int rows, int cols) {

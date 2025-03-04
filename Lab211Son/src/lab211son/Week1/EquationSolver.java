@@ -28,8 +28,8 @@ public class  EquationSolver {
     
     public List<Float> calculateEquation() {
         if (a == 0) {
-            if (b == 0) return new ArrayList<>(); // Infinitely many solutions
-            else return null; // No solution
+            if (b == 0) return new ArrayList<>(); 
+            else return null; 
         }
         return Collections.singletonList(-b / a);
     }
@@ -38,7 +38,7 @@ public class  EquationSolver {
         if (a == 0) return new EquationSolver(b, c).calculateEquation();
         
         float delta = b * b - 4 * a * c;
-        if (delta < 0) return null; // No solution
+        if (delta < 0) return null; 
         if (delta == 0) return Collections.singletonList(-b / (2 * a));
         
         List<Float> solutions = new ArrayList<>();
